@@ -17,4 +17,4 @@ print(strFirst[:2])
 print(strFirst[::])
 #"Hello Python"
 print(strFirst[:])
-print("hi")
+
