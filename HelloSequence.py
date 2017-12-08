@@ -46,3 +46,28 @@ m=[x%2 for x in [1,2,3,4]]
 print(m)
 n=[x*2 for x in range(10) if x%2==0]
 print(n)
+
+#常见列表内建函数
+#append/count/extend/index/insert/pop/remove/sort/reverse
+A.append(4)
+print(A.count(1))
+print(A.extend(B))#None
+print(A)
+print(A.index(2,6,len(A)))#返回第一个值为2的索引值
+A.reverse()#翻转
+print(A)
+
+#排序
+A.sort()
+print(A)
+#自定义排序
+M=[('a',1),('b',-1)]
+M.sort(key=lambda x:x[1])
+print(M)
+
+M.sort(key=lambda x:x[1],reverse=True)
+print(M)
+M.sort(key=lambda x:x[1])
+print(M)
+
+
