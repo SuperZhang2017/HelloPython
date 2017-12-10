@@ -52,3 +52,4 @@ import operator
 re = operator.eq(d1,d2)
 print(re)
 print(len(d1)>len(d2))
+
