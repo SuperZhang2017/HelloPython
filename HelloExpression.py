@@ -46,4 +46,21 @@ for i in range(len(liA)):
 for i,eachLi in enumerate(liA):
     print(i+1,eachLi)
 
-    
+#7.range()内建函数range(start,end,step)
+#start默认为0，step默认为1
+#注：start.step可以省略，但不能是range(0,end,1）此类
+A=range(0,2)
+print(list(A))
+B=range(2)
+print(list(B))
+C=range(3,100,2)
+print(list(C))
+
+#8.序列相关的内建函数
+#sorted()/reversed()/enumerate()/zip()
+tA=(1,2,3)
+tB=('A','B')
+
+for a,b in zip(tA,tB):
+    print(b,a)
+
