@@ -63,4 +63,28 @@ tB=('A','B')
 
 for a,b in zip(tA,tB):
     print(b,a)
+#9.break、continue语句--类似java
+#demo
+
+def pwd():
+    passwordList = ['1','2','a']
+    valid = False
+    count = 3
+    while count >0:
+        inp = input("please enter password:")
+        for eachletter in passwordList:
+            if input == eachletter:
+                valid = True
+                print("right")
+                break
+        if not valid:
+            print("invalid input")
+            count -=1
+            continue
+        else:
+            break
+
+
+
+
 
