@@ -70,4 +70,15 @@ print(M)
 M.sort(key=lambda x:x[1])
 print(M)
 
+#map()/filter()/reduce()
+li = [2,3,4,5,10,2,-6]
+re = map(lambda x:x*x,li)
+print(list(re))
 
+res = filter(lambda x:x%2==0,li)
+print(list(res))
+
+from functools import reduce
+
+resu = reduce(lambda x,y:x-y,li)
+print(resu)
