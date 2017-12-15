@@ -70,7 +70,7 @@ print(M)
 M.sort(key=lambda x:x[1])
 print(M)
 
-#map()/filter()/reduce()
+#map()/filter()/reduce()与lamada连用
 li = [2,3,4,5,10,2,-6]
 re = map(lambda x:x*x,li)
 print(list(re))
@@ -81,4 +81,8 @@ print(list(res))
 from functools import reduce
 
 resu = reduce(lambda x,y:x-y,li)
+print(resu)
+
+#有初始值
+resu = reduce(lambda x,y:x*y,li,0)
 print(resu)
