@@ -70,7 +70,7 @@ print(M)
 M.sort(key=lambda x:x[1])
 print(M)
 
-#map()/filter()/reduce()与lamada连用
+#2.map()/filter()/reduce()与lamada连用
 li = [2,3,4,5,10,2,-6]
 re = map(lambda x:x*x,li)
 print(list(re))
@@ -86,3 +86,32 @@ print(resu)
 #有初始值
 resu = reduce(lambda x,y:x*y,li,0)
 print(resu)
+
+#3.多重赋值
+a, b = 1, 2
+print(a)
+print(b)
+#赋值变量个数一致，不然报错
+a, b, c = 3, 2,1#error not enough values to unpack
+print(a)
+print(b)
+print(c)
+
+a,b = 3,2#error too many values to unpack
+print(a)
+print(b)
+
+#4.变量交换：相比java 写法简洁
+a = 1
+b = 2
+
+a,b = b,a
+print(a)#2
+print(b)#1
+
+c = 3
+
+a,b,c = c,a,b
+print(a)
+print(b)
+print(c)
