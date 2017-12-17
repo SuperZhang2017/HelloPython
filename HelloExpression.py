@@ -85,6 +85,14 @@ def pwd():
             break
 
 
+#斐波那契数列
+def fib(x):
+    result = []
+    a, b = 0, 1
+    while a<x:
+        result.append(a)
+        a, b = b, a+b
 
-
+    return result
+print(fib(100))
 
