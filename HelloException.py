@@ -55,3 +55,16 @@ def a(obj):
         print(e)
 
 print(a('BC'))
+
+
+def b(obj):
+    try:
+        re = float(obj)
+    except Exception as e:
+        raise Exception
+        print(e)
+    finally:
+        print("take care!")
+    return re
+print(b(99))
+
