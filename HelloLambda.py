@@ -75,7 +75,7 @@ print(reD)
 
 #========== reduce():reduce函数会对参数序列中元素进行累积,返回value值============================
 #reduce(function, sequence[, initial]) -> value
-#注意function函数不能为None。
+#注意function函数可以为None。此时结果也为none
 #unction参数是一个有两个参数的函数
 #reduce依次从sequence中取一个元素，和上一次调用function的结果做参数再次调用function。
 #第一次调用function时，如果提供initial参数，会以sequence中的第一个元素和initial作为参数调用function，否则会以序列sequence中的前两个元素做参数调用function。
@@ -89,6 +89,11 @@ print(m==n)#False
 mn = reduce(lambda x,y:x**2+y,l1)
 print(mn)#13
 
+nn = reduce(lambda x,y:0,l1)
+print(nn)
 
+ne = reduce(lambda x,y:None,l1)
+print(ne)
 
-
+# nf = reduce(lambda y:y**2,l1)--error,必须为两个参数
+# print(nf)
