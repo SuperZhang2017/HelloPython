@@ -18,9 +18,15 @@
 # 1.try..except
 # 2.try..finally
 try:
-    f = open("a.txt")
+    f = open("../../a.txt")
 except IOError as e:
     print(e)
+
+#安全关闭
+# noinspection PyUnboundLocalVariable
+with open("../../a.txt") as f:
+    for line in f:
+        print(line)
 
 def safe_float(obj):
     try:
