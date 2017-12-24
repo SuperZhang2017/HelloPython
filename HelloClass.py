@@ -141,10 +141,96 @@ valedictorian = max((student.gpa, student.name) for student in graduates)
 print(valedictorian)
 
 
+# ============imporve==================
+# 私有函数
+#
+# 如果成员函数或成员变量以双下划线__开始，表示private。不以双下划线开始命名的是公胡成员。python中没有类的保护成员。
+#
+# 继承：
+#
+# 继承时成员特性：
+#
+# 对于类的成员，在子类中可以通过父类.变量名或者子类.变量名来访问，是相同的。
+# 对于对象的成员，在子类中通过self.变量名来访问。访问不属于这个类的私有成员“_classname__method”或“_classname__variable”
+# 继承时方法的特性：
+#
+# 生成子类的构造函数的时候，不会自动调用父类的构造函数，你必须手动调用它。同时，在对象释放的时候，同样要手动调用析构函数。
+# 子类的构造函数和析构函数可以不定义，如果不定义的话，这会调用基类的构造和析构函数。
+# Python不存在动态绑定和静态绑定。这一点和c++不同。
+# 如果基类有一个public函数，子类中重新定义一个和他名称相同，子类覆盖父类函数，python中没有函数重载，一个函数名只能对应一个函数。
 
+class A(object):
+    a = 10
+    def tell(self):
+        print('A tell')
+        self.say()
 
+    def say(self):
+        print('A say')
+        self.__work()
 
+    def __work(self):
+        print('A work')
 
+class B(A):
+    def tell(self):
+        print('B tell')
+        self.say()
+        super(B,self).say()
+        A.say(self)
 
+    def say(self):
+        print('B say')
+        self.__work()
 
+    def __work(self):
+        print('B work')
+        self.__run()
 
+    def __run(self):#private method
+        print('B run')
+
+b = B()
+c = b.tell()
+#B tell   B say  B work  B run  A say A work A say A work
+
+# print(c)
+
+class A(object):
+    a = 10
+    def tell(self):
+        print('A tell')
+        self.say()
+
+    def say(self):
+        print('A say')
+        self.work()
+
+    def work(self):
+        print('A work')
+
+class B(A):
+    def tell(self):
+        print('B tell')
+        self.say()
+        super(B,self).say()
+        A.say(self)
+        super().work()
+    def say(self):
+        print('B say')
+        self.work()
+
+    def work(self):
+        print('B work')
+        self.run()
+
+    def run(self):#public method
+        print('B run')
+
+d = B()
+e = A()
+d.tell()#公有方法，子类重写（override），无函数重载
+print(d.a)
+print(e.a)
+print(d.a == e.a)
+#B tell  B say B work  B run A say B work B run  A say() B work B run A work()
