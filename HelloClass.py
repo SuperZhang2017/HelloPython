@@ -229,7 +229,7 @@ class B(A):
 
 d = B()
 e = A()
-d.tell()#公有方法，子类重写（override），无函数重载
+d.tell()#公有方法，子类重写（override），无函数重载, 若是私有方法（__开始的方法），则子类不能override 父类对应的方法
 print(d.a)
 print(e.a)
 print(d.a == e.a)
