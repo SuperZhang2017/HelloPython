@@ -197,6 +197,7 @@ c = b.tell()
 # print(c)
 
 class A(object):
+    """test extend"""
     a = 10
     def tell(self):
         print('A tell')
@@ -234,3 +235,51 @@ print(d.a)
 print(e.a)
 print(d.a == e.a)
 #B tell  B say B work  B run A say B work B run  A say() B work B run A work()
+
+#查看类里包含的属性：1.dir() 2.__dict__
+# 1.dir()
+li = dir(A)
+print(li)
+# 2.__dict__
+li = A.__dict__
+print(dict(li))
+print(A.__dict__)#类A的属性（字典）
+print(A.__doc__)#类A的文档字符串
+print(A.__name__)#类A的名字
+print(A.__bases__)#类A的所有父类构成的元祖
+print(A.__module__)#类A定义所在的模块
+print(e.__class__)#类A对应类
+
+#注：__name__常用于类型对象，如内建类型
+print(type(3.1243).__name__)#float
+print(type('werqwr').__name__)#str
+
+#注：__dict__
+# 1.访问一个类的属性时候，python解释器会先搜索字典（__dict__）以得到想要的属性。
+# 2.如果在__dict__没有找到，将会在基类的字典中进行搜索，采用"深度优先搜索"顺序
+# 3.基类集合的搜索是按照顺序的，从左到右，按其在类定义时，定义父类参数时的顺序
+# 4.对类的修改仅会影响到此类的字典，基类的__dict__属性不会被改动的
+
+#注：__module__
+#1.5版本引入，类名完全有模块名所限定
+
+from functools import reduce
+
+print(reduce.__module__)
+print(reduce.__name__)
+print(reduce.__doc__)
+print(type(reduce))
+print(reduce.__class__)
+print(reduce.__init__())
+
+print(map.__dict__)
+print(map.__module__)
+print(map.__doc__)
+print(map.__class__)
+print(map.__name__)
+print(type(map))
+
+print(filter.__doc__)
+print(filter.__dict__)
+print(filter.__module__)
+print(filter.__name__)
