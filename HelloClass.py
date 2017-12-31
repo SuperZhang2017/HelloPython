@@ -283,3 +283,50 @@ print(filter.__doc__)
 print(filter.__dict__)
 print(filter.__module__)
 print(filter.__name__)
+
+
+#method classmethod staticmethod比较
+# classmethod 属于类的方法，可以有类的实例和类对象调用
+# staticmethod 属于静态方法，可以不需要参数
+
+# @classmethod means: when this method is called, we pass the class
+# as the first argument instead of the instance of that class
+# (as we normally do with methods).This means you can use the class
+# and its properties inside that method rather than a particular instance.
+
+# @staticmethod means: when this method is called,
+# we don't pass an instance of the class to it (as we normally do with methods). '
+# 'This means you can put a function inside a class '
+# but you can't access the instance of that class
+# (this is useful when your method does not use the instance).
+
+class CC(object):
+    def test(self,x):#实例方法
+        return str(x)+"hello method"
+    @classmethod
+    def testClassMethod(cls,x):#类方法
+        return str(cls) +"classmethod"
+    @staticmethod
+    def testStaticMethod():#静态方法
+        return "staticmethod"
+
+class DD(CC):
+    @staticmethod
+    def testStaticMethod():
+        return "DD staticmethod"
+
+
+A  = CC()
+print(A.testStaticMethod())
+
+
+#调用
+ccc = CC()
+print(ccc.test("abc"))
+#print(CC.test()) error
+
+print(ccc.testStaticMethod())
+print(CC.testStaticMethod())
+
+print(ccc.testClassMethod("abc"))
+print(CC.testClassMethod("abc"))
