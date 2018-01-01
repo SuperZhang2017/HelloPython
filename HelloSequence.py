@@ -6,9 +6,13 @@ print(li)
 liA =list('abc')
 print(liA)
 print(tuple('abc'))
-#1.2访问列表值，下标访问
+#1.2访问列表值，下标访问,切片访问-高级特性
 print(li[3][1])
 print(li[:3])
+print(li[3:])
+print(li[::])#all
+print(li[::-1])
+print(li[1:])
 #1.3更新列表
 print(li[2])
 li[2]=1000
