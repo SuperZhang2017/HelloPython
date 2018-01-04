@@ -24,8 +24,8 @@ except IOError as e:
 
 #安全关闭
 # noinspection PyUnboundLocalVariable
-with open("../../a.txt") as f:
-    for line in f:
+with open("../../a.txt") as ff:
+    for line in ff:
         print(line)
 
 def safe_float(obj):
