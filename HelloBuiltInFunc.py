@@ -123,3 +123,40 @@ print(bool((1,))) #True
 
 print(bool({})) #False:空dict
 print(bool({'a':1,}))#True
+
+#4.any(*args, **kwargs)：
+# Return True if bool(x) is True for any x in the iterable.
+# If the iterable is empty,return False.
+print("=====4.any()======")
+print(any((1,2,3,0))) #True
+print(any((0,)))#False
+print(any(()))#empty:False
+print(any({'a',0}))#True
+print(any([0,0]))#False
+print(any(('','')))#False
+print(any('')) #False
+print(any((False,)))#False
+
+#5.ascii(*args, **kwargs):
+#Return an ASCII-only representation of an object.
+#As repr(), return a string containing a printable representation of an
+#object, but escape the non-ASCII characters in the string returned by
+#repr() using \\x, \\u or \\U escapes. This generates a string similar
+#to that returned by repr() in Python 2.
+print("=====5.ascii()======")
+print(ascii("zc"))#zc
+print(repr("zc"))#zc
+print(ascii(1))#1
+print(ascii(0))#0
+print(ascii(1100))#1100
+print(ascii((1,2)))#(1,2)
+
+#6.bin(*args, **kwargs):
+
+#Return the binary representation of an integer.
+#     >>> bin(2796202)
+#      '0b1010101010101010101010'
+print("=====6.bin()======")
+print(bin(0))#0b0
+print(bin(1))
+print(bin(1100))
