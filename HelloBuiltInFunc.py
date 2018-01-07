@@ -160,3 +160,38 @@ print("=====6.bin()======")
 print(bin(0))#0b0
 print(bin(1))
 print(bin(1100))
+
+print("=====7.callable()======")
+#7.callable(i_e_, some_kind_of_function)
+"""
+ Return whether the object is callable (i.e., some kind of function).
+
+ Note that classes are callable, as are instances of classes with a
+ __call__() method.
+ """
+print(callable(0))#False
+print(callable(map)) #True
+print(callable(filter))#True
+
+from HelloBubbleSort import BubbleSort
+print(callable(BubbleSort))#True:classes are callable
+
+def te():
+    pass
+print(callable(te))#True
+
+print("=====8.chr()======")
+#8.chr(*args, **kwargs): # real signature unknown
+""" Return a Unicode string of one character with ordinal i; 0 <= i <= 0x10ffff. """
+
+print(chr(49))#'1'
+print(type(chr(49)))
+print(chr(65))#'A'
+print(chr(90))#'Z'
+
+#9.copyright(*args, **kwargs): # real signature unknown
+"""
+    interactive prompt objects for printing the license text, a list of
+        contributors and the copyright notice.
+"""
+print(copyright())
