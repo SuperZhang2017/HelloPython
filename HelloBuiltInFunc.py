@@ -188,10 +188,49 @@ print(chr(49))#'1'
 print(type(chr(49)))
 print(chr(65))#'A'
 print(chr(90))#'Z'
-
+print("=====9.copyright()======")
 #9.copyright(*args, **kwargs): # real signature unknown
 """
     interactive prompt objects for printing the license text, a list of
         contributors and the copyright notice.
 """
 print(copyright())
+print("=====10.compile()======")
+#10.compile(source, filename, mode[, flags[, dont_inherit]])
+"""
+  Compile source into a code object that can be executed by exec() or eval().
+
+  The source code may represent a Python module, statement or expression.
+  The filename will be used for run-time error messages.
+  The mode must be 'exec' to compile a module, 'single' to compile a
+  single (interactive) statement, or 'eval' to compile an expression.
+  The flags argument, if present, controls which future statements influence
+  the compilation of the code.
+  The dont_inherit argument, if true, stops the compilation inheriting
+  the effects of any future statements in effect in the code calling
+  compile; if absent or false these statements do influence the compilation,
+  in addition to any features explicitly specified.
+"""
+"""
+source -- 字符串或者AST（Abstract Syntax Trees）对象。。
+filename -- 代码文件名称，如果不是从文件读取代码则传递一些可辨认的值。
+mode -- 指定编译代码的种类。可以指定为 exec, eval, single。
+flags -- 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。。
+flags和dont_inherit是用来控制编译源码时的标志
+"""
+str = "for i in range(10):print(i)"
+c = compile(str,'','exec')
+print(exec(c))
+
+str = "3*4+5"
+d = compile(str,'','eval')
+print(eval(d))
+
+#11.delattr(x, y):  # real signature unknown; restored from __doc__
+"""
+Deletes the named attribute from the given object.
+
+delattr(x, 'y') is equivalent to ``del x.y''
+"""
+
+
