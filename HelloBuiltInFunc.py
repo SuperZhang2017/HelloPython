@@ -232,5 +232,32 @@ Deletes the named attribute from the given object.
 
 delattr(x, 'y') is equivalent to ``del x.y''
 """
+#12.divmod(x, y): # known case of builtins.divmod--返回整除部分和余数的元组
+""" Return the tuple (x//y, x%y).  Invariant: div*y + mod == x. """
+x ,y = 10, 11
+z = divmod(10,11)
+print(z)
+
+#13.eval(*args, **kwargs):  # real signature unknown
+"""
+Evaluate the given source in the context of globals and locals.
+
+The source may be a string representing a Python expression
+or a code object as returned by compile().
+The globals must be a dictionary and locals can be any mapping,
+defaulting to the current globals and locals.
+If only globals is given, locals defaults to it.
+"""
+#eval(source,globals,locals)
+print(eval("{'a':1,'b':2}"),{'a':2,'b':1})
+# 可以把list,tuple,dict和string相互转化。
+aList = eval('[1,2,3]')#str-->List
+print(aList)
+aTuple = eval('(1,2,)')
+print(aTuple)
+aDict = eval('{"c":1,"d":2}')
+print(aDict)
+print(eval('aList')) #List -->str
+print(type('aList'))
 
 
