@@ -260,4 +260,25 @@ print(aDict)
 print(eval('aList')) #List -->str
 print(type('aList'))
 
+#14.format(*args, **kwargs):  # real signature unknown
+"""
+Return value.__format__(format_spec)
 
+format_spec defaults to the empty string.
+See the Format Specification Mini-Language section of help('FORMATTING') for
+details.
+"""
+ss = 'abc'
+sss ='012'
+print('{}'.format(ss))
+print('{1}{0}'.format(ss,sss))
+
+data = [4, 8, 15, 16, 23, 42]
+
+print('{d[0]} {d[5]}'.format(d=data))
+
+dataOne = {'first': 'Hodor', 'last': 'Hodor!'}
+print('{first} {last}'.format(**dataOne))
+from datetime import datetime
+print('{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5)))
+#*args 表示可变参数，**kwargs 表示关键字参数。
