@@ -225,19 +225,20 @@ print(exec(c))
 str = "3*4+5"
 d = compile(str,'','eval')
 print(eval(d))
-
+print("=====11.delattr()======")
 #11.delattr(x, y):  # real signature unknown; restored from __doc__
 """
 Deletes the named attribute from the given object.
 
 delattr(x, 'y') is equivalent to ``del x.y''
 """
+print("=====12.divmod()======")
 #12.divmod(x, y): # known case of builtins.divmod--返回整除部分和余数的元组
 """ Return the tuple (x//y, x%y).  Invariant: div*y + mod == x. """
 x ,y = 10, 11
 z = divmod(10,11)
 print(z)
-
+print("=====13.eval()======")
 #13.eval(*args, **kwargs):  # real signature unknown
 """
 Evaluate the given source in the context of globals and locals.
@@ -260,6 +261,7 @@ print(aDict)
 print(eval('aList')) #List -->str
 print(type('aList'))
 
+print("=====14.format()======")
 #14.format(*args, **kwargs):  # real signature unknown
 """
 Return value.__format__(format_spec)
@@ -278,7 +280,8 @@ data = [4, 8, 15, 16, 23, 42]
 print('{d[0]} {d[5]}'.format(d=data))
 
 dataOne = {'first': 'Hodor', 'last': 'Hodor!'}
-print('{first} {last}'.format(**dataOne))
+print('{first} {last}'.format(**dataOne))#传递关键字参数
+
 from datetime import datetime
 print('{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5)))
 #*args 表示可变参数，**kwargs 表示关键字参数。
