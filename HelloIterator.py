@@ -11,6 +11,9 @@ for eachVar in di:
     print(eachVar,di.get(eachVar))
 
 #等价于
+for key,value in di.items():
+    print(key+":"+str(value))
+
 for eachVar in di.keys():
     print(eachVar,di.get(eachVar))
 
